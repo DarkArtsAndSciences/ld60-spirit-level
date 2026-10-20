@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bd8nuk1hk0xl0"]
+
+[ext_resource type="Script" uid="uid://b647qfkxvn8w2" path="res://prey.gd" id="1_8ph3e"]
+[ext_resource type="Shape2D" uid="uid://b72si0qehp3ee" path="res://prey_circle.tres" id="1_saoa3"]
+
+[node name="Prey" type="Area2D" unique_id=1149105699]
+script = ExtResource("1_8ph3e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1259081624]
+shape = ExtResource("1_saoa3")

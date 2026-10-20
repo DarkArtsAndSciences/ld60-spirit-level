@@ -1,0 +1,162 @@
+{
+  "about": "The message, card by card. Paths are under assets/clipart/. target and crop are fractions of the photo (0..1): target is where the planchette's fingertip must rest; crop is [centre x, centre y, zoom] of the part shown in the oval. Landscape photos go in frame_landscape; portrait ones in frame_portrait, the same frame turned a quarter turn (\"@90\"). hour is what the corner clock shows once the card is read: it starts at 7 and reaches 3 on the last card.",
+  "frame_landscape": "art-explosion-10/Traditional Images/Borders and Such/Borders/Abstract Borders/Oval and Circle Borders/German Oval Border C",
+  "frame_portrait": "art-explosion-10/Traditional Images/Borders and Such/Borders/Abstract Borders/Oval and Circle Borders/German Oval Border C@90",
+  "planchette": "art-explosion-10/Traditional Images/Ad Art/Pointer 4",
+  "cards": [
+    {
+      "n": 1,
+      "hour": 8,
+      "words": "it's later where i am.",
+      "image": "art-explosion-12/Photos (Part 2)/London/London 1/K11B0039.JPG",
+      "target": [
+        0.47,
+        0.25
+      ],
+      "crop": [
+        0.5,
+        0.42,
+        1.0
+      ],
+      "hand_from": "right",
+      "caption": "Greenwich, London. The Shepherd Gate Clock, 1852: the first clock to show the public Greenwich Mean Time, on a twenty-four hour dial. Visitors read the dial wrong, expecting noon at the top. [It's] always [later] than it looks. Stand [where] the meridian crosses the gate and, [I] [am] told, the time is exactly right.",
+      "target_radius": 70
+    },
+    {
+      "n": 2,
+      "hour": 9,
+      "words": "i can't take pictures.",
+      "image": "art-explosion-13/Photos (Part 3)/Universal Signs/C04P0076.JPG",
+      "target": [
+        0.77,
+        0.28
+      ],
+      "crop": [
+        0.72,
+        0.4,
+        1.15
+      ],
+      "hand_from": "right",
+      "caption": "A sign on a coast road, photographer not recorded: NO FOTO, NO VIDEO. The little camera in the red circle is crossed out, and still somebody stopped to photograph it. [I] read it as a joke now. You [can't] [take] a picture of a rule against [pictures]."
+    },
+    {
+      "n": 3,
+      "hour": 10,
+      "words": "someone took all of these. nobody kept their names.",
+      "image": "art-explosion-13/Photos (Part 3)/Space/C03H0030.JPG",
+      "target": [
+        0.62,
+        0.36
+      ],
+      "crop": [
+        0.6,
+        0.45,
+        1.0
+      ],
+      "hand_from": "right",
+      "caption": "[Someone] aboard the shuttle Atlantis, STS-44, 1991, aims a camera the size of a lunchbox straight back at the photographer. The crew [took] [all] the photographs [of] the mission. The disc keeps [these] details: the flight, the year, the film. [Nobody] [kept] [their] [names]."
+    },
+    {
+      "n": 4,
+      "hour": 11,
+      "words": "your game is old tech now.",
+      "image": "art-explosion-13/Photos (Part 3)/Transportation/Transportation 1/IMG0037.JPG",
+      "target": [
+        0.47,
+        0.86
+      ],
+      "crop": [
+        0.5,
+        0.55,
+        1.0
+      ],
+      "hand_from": "right",
+      "caption": "A scrapyard tower of flattened cars, each one somebody's first car, somebody's last. The yellow one at the very bottom carried [your] family on road trips; now it holds up the rest. Every [game] on a shelf [is] headed somewhere like this: [old] [tech], stacked, crushed, still bright. Look [now], before the crane comes."
+    },
+    {
+      "n": 5,
+      "hour": 12,
+      "words": "play the others while they still run.",
+      "image": "art-explosion-13/Photos (Part 3)/Transportation/Transportation 1/IMG0012.JPG",
+      "target": [
+        0.61,
+        0.15
+      ],
+      "crop": [
+        0.6,
+        0.45,
+        1.0
+      ],
+      "hand_from": "left",
+      "caption": "An old steam train blowing its final plume of smoke from the stack as it heads back to the station to be retired. Somebody got to [play] engineer one more time. [The] [others] went to museums [while] [they] could [still] [run]. This one ran until the coal did."
+    },
+    {
+      "n": 6,
+      "hour": 1,
+      "words": "i won't remember this.",
+      "image": "art-explosion-13/Photos (Part 3)/Science & Industry/PHOTO010.JPG",
+      "target": [
+        0.36,
+        0.4
+      ],
+      "crop": [
+        0.5,
+        0.45,
+        1.0
+      ],
+      "hand_from": "left",
+      "caption": "A diving helmet, brass and glass, empty on a shelf. Whoever looked out through its round front window, [I] couldn't say, and the helmet [won't] tell. Brass doesn't [remember] the sea. Nothing in [this] picture has been wet for years."
+    },
+    {
+      "n": 7,
+      "hour": 2,
+      "words": "but you will.",
+      "image": "art-explosion-13/Photos (Part 3)/Science & Industry/PHOTO053.JPG",
+      "target": [
+        0.47,
+        0.44
+      ],
+      "crop": [
+        0.5,
+        0.5,
+        1.0
+      ],
+      "hand_from": "left",
+      "caption": "A hand pressing a cassette into a 1990s office deck, label written in ballpoint. It records over something, [but] it keeps something too. Tape forgets slowly. [You] [will] find it in a drawer in thirty years, and it will still play."
+    },
+    {
+      "n": 8,
+      "hour": 3,
+      "words": "call someone. get some sleep.",
+      "image": "art-explosion-13/Photos (Part 3)/Universal Signs/C04P0045.JPG",
+      "target": [
+        0.5,
+        0.73
+      ],
+      "crop": [
+        0.5,
+        0.5,
+        0.74
+      ],
+      "hand_from": "right",
+      "caption": "Two signs in blue enamel: a telephone above, a bed below. In 1996 a traveler's whole evening fit on them. [Call] [someone] from the room, hear their voice, then [get] [some] [sleep] in the bed at the bottom of the sign."
+    }
+  ],
+  "secret": {
+    "words": "never play alone. you weren't.",
+    "image": "art-explosion-10/Raster Images (Part 2)/Religion (Part 2)/Other/Fingertips Touching",
+    "target": [
+      0.4,
+      0.42
+    ],
+    "caption": "Fingertips Touching, an engraving: two hands reaching across the stars, a beam of light falling between them. They [never] quite meet. Each hand waits for the other to [play] its part; neither moves [alone]. Put the pointer where the fingers almost touch. [You] [weren't] the only one reaching.",
+    "target_px": [
+      380,
+      272
+    ],
+    "beam_px": [
+      520,
+      140
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+; A minimal project so the replay test can run headless:
+;   godot --headless --path tools/balance-board/godot --script res://test_board_feel.gd
+config_version=5
+
+[application]
+config/name="Balance Board tools"

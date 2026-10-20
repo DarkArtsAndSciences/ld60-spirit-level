@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Board Test</title>
+<style>
+  :root { --bg: #111; --fg: #ddd; --dim: #555; --dot: #fff; --cell: #2a2a2a; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 14px/1.4 ui-monospace, Menlo, monospace; }
+  main { display: grid; grid-template-columns: minmax(0, 520px) minmax(0, 1fr); gap: 24px; padding: 16px; }
+  @media (max-width: 760px) { main { grid-template-columns: 1fr; } }
+  canvas { width: 100%; aspect-ratio: 1.75; background: var(--cell); border-radius: 12px; display: block; }
+  pre { margin: 0; white-space: pre-wrap; }
+  #log { color: var(--dim); max-height: 50vh; overflow: auto; margin-top: 12px; }
+  label { display: inline-flex; gap: 6px; align-items: center; margin-right: 14px; }
+</style>
+</head>
+<body>
+<main>
+  <div>
+    <canvas id="c" width="700" height="400"></canvas>
+    <p>
+      <label><input type="checkbox" id="fx"> flip left/right</label>
+      <label><input type="checkbox" id="fy"> flip toes/heels</label>
+    </p>
+    <p>The board from above: toes at the top. The dot is your centre of balance; the four
+      numbers are the corners in kilograms.</p>
+  </div>
+  <div>
+    <pre id="nums">waiting for the server…</pre>
+    <pre id="log"></pre>
+  </div>
+</main>
+<script>
+const c = document.getElementById("c"), g = c.getContext("2d");
+const nums = document.getElementById("nums"), logEl = document.getElementById("log");
+const fx = document.getElementById("fx"), fy = document.getElementById("fy");
+let r = null, shown = { x: 0, y: 0 };
+
+function log(t) { logEl.textContent = new Date().toLocaleTimeString() + "  " + t + "\n" + logEl.textContent; }
+
+function connect() {
+  const ws = new WebSocket(`ws://${location.host}/ws`);
+  ws.onmessage = (e) => { const m = JSON.parse(e.data); if (m.info) log(m.info); else r = m; };
+  ws.onclose = () => { log("server connection closed; retrying"); r = null; setTimeout(connect, 2000); };
+}
+connect();
+
+function draw() {
+  const W = c.width, H = c.height;
+  g.clearRect(0, 0, W, H);
+  g.strokeStyle = "#444"; g.lineWidth = 2;
+  g.strokeRect(20, 20, W - 40, H - 40);
+  g.beginPath(); g.moveTo(W / 2, 20); g.lineTo(W / 2, H - 20); g.moveTo(20, H / 2); g.lineTo(W - 20, H / 2); g.stroke();
+  if (r) {
+    const on = r.total > 10;
+    const x = (fx.checked ? -1 : 1) * r.x, y = (fy.checked ? -1 : 1) * r.y;
+    shown.x += ((on ? x : 0) - shown.x) * 0.3;
+    shown.y += ((on ? y : 0) - shown.y) * 0.3;
+    // corner weights, in the board's frame (flips move the labels with the dot)
+    const corners = [["TL", r.tl, -1, 1], ["TR", r.tr, 1, 1], ["BL", r.bl, -1, -1], ["BR", r.br, 1, -1]];
+    g.fillStyle = "#888"; g.font = "16px ui-monospace, Menlo, monospace";
+    for (const [name, kg, sx, sy] of corners) {
+      const px = W / 2 + (fx.checked ? -sx : sx) * (W / 2 - 70), py = H / 2 - (fy.checked ? -sy : sy) * (H / 2 - 50);
+      g.textAlign = "center"; g.fillText(`${name} ${kg.toFixed(1)}`, px, py);
+    }
+    g.fillStyle = on ? "#fff" : "#555";
+    g.beginPath(); g.arc(W / 2 + shown.x * (W / 2 - 40), H / 2 - shown.y * (H / 2 - 40), on ? 18 : 10, 0, 7); g.fill();
+    nums.textContent = `x ${r.x >= 0 ? "+" : ""}${r.x.toFixed(2)}   y ${r.y >= 0 ? "+" : ""}${r.y.toFixed(2)}\n` +
+      `${on ? "on the board" : "nobody on the board"}`;
+  }
+  requestAnimationFrame(draw);
+}
+draw();
+</script>
+</body>
+</html>

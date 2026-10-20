@@ -1,0 +1,7 @@
+.DS_Store
+.godot/
+builds/
+# the clip-art discs and everything built from them (licensed for use inside a product only)
+assets/
+game/message/**/*.png
+game/message/**/*.png.import
